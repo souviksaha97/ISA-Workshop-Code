@@ -19,23 +19,16 @@ index = count()
 
 
 def animate(i):
-
     current_price = BTC.get_price('BTC', 'USD')
     current_price = current_price['BTC']['USD']
     i = next(index)
     if i%50 == 0:
         x.getTextToSpeech('Bitcoin price is : ' + str(current_price))
 
-    
-
     x_values.append(i)
     y_values.append(current_price)
-
     plt.cla()
-    
-    x_values, y_values = x_values[-20:], y_values[-20:]
-
-    plt.plot(x_values, y_values)
+    plt.plot(x_values[-20:], y_values[-20:])
     # time.sleep(5)
 
 
